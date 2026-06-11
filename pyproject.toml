@@ -1,0 +1,33 @@
+[project]
+name = "lol-game-data-snapshot"
+version = "0.1.0"
+description = "Generate a small League of Legends LCU game data JSON snapshot."
+requires-python = ">=3.10"
+dependencies = [
+    "league-tools>=1.1.5",
+]
+
+[project.scripts]
+lol-game-data-snapshot = "lol_game_data_snapshot.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.3",
+    "ruff>=0.14.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lol_game_data_snapshot"]
+

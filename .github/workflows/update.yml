@@ -1,0 +1,80 @@
+name: Update snapshot
+
+on:
+  workflow_dispatch:
+    inputs:
+      force_update:
+        description: "Run the full update even when metadata is current."
+        type: boolean
+        required: false
+        default: false
+  schedule:
+    - cron: "17 */6 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    env:
+      SNAPSHOT_REGION: ${{ vars.SNAPSHOT_REGION || 'OC1' }}
+      SNAPSHOT_LANGUAGES: ${{ vars.SNAPSHOT_LANGUAGES || 'default,zh_CN' }}
+      SNAPSHOT_FORCE_UPDATE: ${{ github.event_name == 'workflow_dispatch' && inputs.force_update }}
+      RIOT_MANIFEST_GO_VERSION: v1.0.0
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check snapshot update
+        id: check
+        shell: bash
+        run: bash scripts/check-update.sh
+
+      - name: Skip snapshot update
+        if: steps.check.outputs.should_update != 'true'
+        run: |
+          echo "Snapshot is current or update is not required."
+          echo "Reason: ${{ steps.check.outputs.reason }}"
+
+      - uses: actions/setup-python@v5
+        if: steps.check.outputs.should_update == 'true'
+        with:
+          python-version: "3.13"
+
+      - uses: astral-sh/setup-uv@v5
+        if: steps.check.outputs.should_update == 'true'
+
+      - name: Download RiotManifestGo
+        if: steps.check.outputs.should_update == 'true'
+        run: |
+          mkdir -p .tmp/bin
+          curl -fsSL \
+            "https://github.com/Virace/RiotManifestGo/releases/download/${RIOT_MANIFEST_GO_VERSION}/manifest-cli-linux-amd64" \
+            -o .tmp/bin/manifest-cli
+          chmod +x .tmp/bin/manifest-cli
+
+      - name: Generate snapshot
+        if: steps.check.outputs.should_update == 'true'
+        run: |
+          uv run lol-game-data-snapshot update \
+            --region "${{ steps.check.outputs.region }}" \
+            --languages "$SNAPSHOT_LANGUAGES" \
+            --lcu-manifest-url "${{ steps.check.outputs.manifest_url }}" \
+            --lcu-manifest-id "${{ steps.check.outputs.lcu_manifest_id }}" \
+            --game-version "${{ steps.check.outputs.game_version }}" \
+            --configuration-id "${{ steps.check.outputs.configuration_id }}" \
+            --manifest-cli ".tmp/bin/manifest-cli" \
+            --output "."
+
+      - name: Commit changes
+        if: steps.check.outputs.should_update == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A global metadata.json
+          if git diff --cached --quiet; then
+            echo "No snapshot changes."
+          else
+            git commit -m "chore: update game data snapshot"
+            git push
+          fi
