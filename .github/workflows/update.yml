@@ -41,7 +41,7 @@ jobs:
         with:
           python-version: "3.13"
 
-      - uses: astral-sh/setup-uv@v8
+      - uses: astral-sh/setup-uv@v8.3.2
         if: steps.check.outputs.should_update == 'true'
 
       - name: Download RiotManifestGo
