@@ -68,6 +68,9 @@ jobs:
 
       - name: Commit changes
         if: steps.check.outputs.should_update == 'true'
+        env:
+          GAME_VERSION: ${{ steps.check.outputs.game_version }}
+          LCU_MANIFEST_ID: ${{ steps.check.outputs.lcu_manifest_id }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -75,6 +78,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No snapshot changes."
           else
-            git commit -m "chore: update game data snapshot"
+            git commit -m "chore: update game data snapshot to ${GAME_VERSION:-unknown} (${LCU_MANIFEST_ID:-unknown})"
             git push
           fi
