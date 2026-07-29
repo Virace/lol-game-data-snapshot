@@ -21,7 +21,7 @@ jobs:
       SNAPSHOT_REGION: ${{ vars.SNAPSHOT_REGION || 'OC1' }}
       SNAPSHOT_LANGUAGES: ${{ vars.SNAPSHOT_LANGUAGES || 'default,zh_CN' }}
       SNAPSHOT_FORCE_UPDATE: ${{ github.event_name == 'workflow_dispatch' && inputs.force_update }}
-      RIOT_MANIFEST_GO_VERSION: v1.2.1
+      RIOT_MANIFEST_GO_VERSION: v2.0.0
     steps:
       - uses: actions/checkout@v6
 
