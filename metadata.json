@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-30T08:50:33.612373Z",
+  "generatedAt": "2026-07-31T03:50:40.852894Z",
   "region": "OC1",
   "platform": "windows",
   "configurationId": "OC1",
   "gameVersion": "16.15",
-  "lcuManifestId": "B86830114636D186",
-  "lcuManifestUrl": "https://lol.secure.dyn.riotcdn.net/channels/public/releases/B86830114636D186.manifest",
+  "lcuManifestId": "1267A8BC90DEEE88",
+  "lcuManifestUrl": "https://lol.secure.dyn.riotcdn.net/channels/public/releases/1267A8BC90DEEE88.manifest",
   "languages": [
     "default",
     "zh_CN"
@@ -46,8 +46,8 @@
     },
     {
       "path": "global/default/v1/champions/1.json",
-      "bytes": 49059,
-      "sha256": "6d5c960c6a435c1a2bffcc947d495397c4f00fa574d005ad4103554475fe5f0d"
+      "bytes": 49155,
+      "sha256": "7562236806e37797c7ac50eb556e7e57fb5cc508ca4ff5523cc16a996400a8fb"
     },
     {
       "path": "global/default/v1/champions/10.json",
@@ -136,8 +136,8 @@
     },
     {
       "path": "global/default/v1/champions/12.json",
-      "bytes": 40645,
-      "sha256": "a976ac7f93f725fb58b4034614ead7ec3f17f66432530f2df4c09d08d008a732"
+      "bytes": 40741,
+      "sha256": "5cb0130f3041731ed05d9a15ecf1bf41bbdd33263e27abfdc9302fb5cf456714"
     },
     {
       "path": "global/default/v1/champions/120.json",
@@ -1251,8 +1251,8 @@
     },
     {
       "path": "global/default/v1/skins.json",
-      "bytes": 5824790,
-      "sha256": "1120e9a9fd6fd0facc0daee2feb35271b5dd67f58f6ac3160859dd0813c86b4c"
+      "bytes": 5824982,
+      "sha256": "8a8637c11e736bd2b66b644f7cd99f2307d4ef68ffcc0beb5b07cedb8241bcf2"
     },
     {
       "path": "global/default/v1/summoner-spells.json",
@@ -1271,8 +1271,8 @@
     },
     {
       "path": "global/zh_CN/v1/champions/1.json",
-      "bytes": 52667,
-      "sha256": "ee96a3e350f5d08c0dd3a225da7dc262b7b28028cdd8bff7ce58fdb17561b499"
+      "bytes": 52763,
+      "sha256": "018124e69a73be05391b1f53b9e9da2f7a97bdce0777d03aebe212cc5f361c84"
     },
     {
       "path": "global/zh_CN/v1/champions/10.json",
@@ -1361,8 +1361,8 @@
     },
     {
       "path": "global/zh_CN/v1/champions/12.json",
-      "bytes": 42484,
-      "sha256": "e5e627b08a0346d381fe06945e25976b90afa133f039f2cf120c7b83c055b007"
+      "bytes": 42580,
+      "sha256": "6e167e5f5844434536b571e8f67dd0713116bc29a3c1213cc021b18ec9ddfd3c"
     },
     {
       "path": "global/zh_CN/v1/champions/120.json",
@@ -2476,8 +2476,8 @@
     },
     {
       "path": "global/zh_CN/v1/skins.json",
-      "bytes": 6072129,
-      "sha256": "1c779d86a04304afbb9d04bd251a11b89085125630da8967c78d4636d45b9105"
+      "bytes": 6072321,
+      "sha256": "c6dbc1e784d6832fc629642f49db265bc8224983edfd5e3ebe501ea465517888"
     },
     {
       "path": "global/zh_CN/v1/summoner-spells.json",
