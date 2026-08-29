@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-27T22:16:34.603810Z",
+  "generatedAt": "2026-08-29T07:05:46.028922Z",
   "region": "OC1",
   "platform": "windows",
   "configurationId": "OC1",
   "gameVersion": "16.17",
-  "lcuManifestId": "493EADEA6B7B31C1",
-  "lcuManifestUrl": "https://lol.secure.dyn.riotcdn.net/channels/public/releases/493EADEA6B7B31C1.manifest",
+  "lcuManifestId": "ADA08C6A9BAEDE88",
+  "lcuManifestUrl": "https://lol.secure.dyn.riotcdn.net/channels/public/releases/ADA08C6A9BAEDE88.manifest",
   "languages": [
     "default",
     "zh_CN"
