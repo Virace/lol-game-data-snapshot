@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-09T20:56:53.619207Z",
+  "generatedAt": "2026-09-10T20:53:13.489428Z",
   "region": "OC1",
   "platform": "windows",
   "configurationId": "OC1",
   "gameVersion": "16.18",
-  "lcuManifestId": "8FFD271E6E66978C",
-  "lcuManifestUrl": "https://lol.secure.dyn.riotcdn.net/channels/public/releases/8FFD271E6E66978C.manifest",
+  "lcuManifestId": "F7CA5F522F22112D",
+  "lcuManifestUrl": "https://lol.secure.dyn.riotcdn.net/channels/public/releases/F7CA5F522F22112D.manifest",
   "languages": [
     "default",
     "zh_CN"
@@ -996,8 +996,8 @@
     },
     {
       "path": "global/default/v1/champions/60114.json",
-      "bytes": 16877,
-      "sha256": "0f42091acb6de313f4c08ee4f8984a1d59f8ad6f1f85c35c30b34ebef6a7f068"
+      "bytes": 16940,
+      "sha256": "663ca9c62e8b10310254b18c24c3298b46eed92c9ded373c9dd327519831005a"
     },
     {
       "path": "global/default/v1/champions/60117.json",
@@ -1291,8 +1291,8 @@
     },
     {
       "path": "global/default/v1/skins.json",
-      "bytes": 5892540,
-      "sha256": "5ea25bc2a032c0bd5db666ab4be1dd12955829d74d9627c1aec18579280966e7"
+      "bytes": 5892575,
+      "sha256": "e5834aadbfe136a478af0beacf448117a8013a8f0dd588f4c7c26e06758fe1af"
     },
     {
       "path": "global/default/v1/summoner-spells.json",
@@ -2261,8 +2261,8 @@
     },
     {
       "path": "global/zh_CN/v1/champions/60114.json",
-      "bytes": 17495,
-      "sha256": "cbc33a088a89b76cba1c2ad2234f5029abdd556cf6832bb2c2f0e78858751693"
+      "bytes": 17558,
+      "sha256": "90404726f361273401984086b44de1abd463d1515c3a31ccac9c003ea85b6c33"
     },
     {
       "path": "global/zh_CN/v1/champions/60117.json",
@@ -2556,8 +2556,8 @@
     },
     {
       "path": "global/zh_CN/v1/skins.json",
-      "bytes": 6141740,
-      "sha256": "9e7c6937a9a46bb0bfe974501d480f1ef5e015ce7b246a5257b248164f7eb958"
+      "bytes": 6141775,
+      "sha256": "2796757a5067e90d3275e99a77042fa2fcb42c0a4fa92e6507e5d0b9c6e4d567"
     },
     {
       "path": "global/zh_CN/v1/summoner-spells.json",
